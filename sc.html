@@ -12,7 +12,7 @@
      border-radius: 5px;
      width:300px;
      height:500px;
-     background-color: silver;
+     background-color: red;
    }
   </style>
 
@@ -27,12 +27,22 @@
 
 
 <script>
- 
+const request=require('request-promise')
+const cheerio=require('cheerio')
+let listval=[]
+let listsg=[]
+let n=0
+let n2=4
+let str="200-05-28"
+let ts=document.getElementById("data").value;
+const URL=`https://www.loteriasbr.com/site/home/?search=${ts}`*/
+//document.getElementById("result").innerHTML="%%%%%%%";
 
 //?search=${ts}
 async function test(){
-  const request=require('request-promise')
-  /*const cheerio=require('cheerio')
+  let ts=document.getElementById("data").value;
+  /*const request=require('request-promise')
+  const cheerio=require('cheerio')
   let listval=[]
   let listsg=[]
   let n=0
@@ -40,7 +50,7 @@ async function test(){
   let str="200-05-28"
   let ts=document.getElementById("data").value;
   const URL=`https://www.loteriasbr.com/site/home/?search=${ts}`*/
-  document.getElementById("result").innerHTML="%%%%%%%";
+  document.getElementById("result").innerHTML=ts;
 }
 async function acesso(){
   const request=require('request-promise')
