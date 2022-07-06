@@ -48,7 +48,7 @@ async function acesso(){
   let s=listval[0]
   let format=s.replace(/[Gr.]/g, '')
   let con=format.split(" ").filter(value => value != "").join("")
-  
+  document.getElementById("result").innerHTML=dados;
   for(var i=0; i<105; i++){
   
     
