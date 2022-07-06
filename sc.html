@@ -22,11 +22,12 @@
 <body>
   
   <div><input type="text" id="data"></div>
-  <div id="bt"><button id="btn" onclick= "acesso()">Search</button></div>
+  <div id="bt"><button id="btn" onclick= "test()">Search</button></div>
   <div id="result"></div>
 
 
 <script>
+ 
 const request=require('request-promise')
 const cheerio=require('cheerio')
 let listval=[]
@@ -36,6 +37,9 @@ let n2=4
 let ts=document.getElementById("data").value;
 const URL=`https://www.loteriasbr.com/site/home/?search=${ts}`
 //?search=${ts}
+function test(){
+  document.getElementById("result").innerHTML="OK";
+}
 async function acesso(){
   const response=await request(URL)
   let valor=cheerio.load(response) 
