@@ -28,19 +28,28 @@
 
 <script>
  
-const request=require('request-promise')
-const cheerio=require('cheerio')
-let listval=[]
-let listsg=[]
-let n=0
-let n2=4
-let ts=document.getElementById("data").value;
-const URL=`https://www.loteriasbr.com/site/home/?search=${ts}`
+
 //?search=${ts}
 async function test(){
+  const request=require('request-promise')
+  const cheerio=require('cheerio')
+  let listval=[]
+  let listsg=[]
+  let n=0
+  let n2=4
+  let ts=document.getElementById("data").value;
+  const URL=`https://www.loteriasbr.com/site/home/?search=${ts}`
   document.getElementById("result").innerHTML=ts;
 }
 async function acesso(){
+  const request=require('request-promise')
+  const cheerio=require('cheerio')
+  let listval=[]
+  let listsg=[]
+  let n=0
+  let n2=4
+  let ts=document.getElementById("data").value;
+  const URL=`https://www.loteriasbr.com/site/home/?search=${ts}`
   const response=await request(URL)
   let valor=cheerio.load(response) 
   let dados=valor('span[class=pull-right]').text()
@@ -48,7 +57,7 @@ async function acesso(){
   let s=listval[0]
   let format=s.replace(/[Gr.]/g, '')
   let con=format.split(" ").filter(value => value != "").join("")
-  document.getElementById("result").innerHTML=ts;
+  //document.getElementById("result").innerHTML=ts;
   for(var i=0; i<105; i++){
   
     
@@ -56,7 +65,7 @@ async function acesso(){
     
     n=n+4
     n2=n2+4
-    //document.getElementById("result").innerHTML=sg;
+    document.getElementById("result").innerHTML=sg;
     //console.log(sg);
   }
   
